@@ -15,6 +15,7 @@
 		09E233EA26D3890800C45BF9 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233E926D3890800C45BF9 /* EditView.swift */; };
 		09E233ED26D389DF00C45BF9 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233EC26D389DF00C45BF9 /* DisplayView.swift */; };
 		09E233F026D38A5800C45BF9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233EF26D38A5800C45BF9 /* MainView.swift */; };
+		09E6C67B26D38FD1002E5B15 /* CreatingTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E6C67A26D38FD1002E5B15 /* CreatingTabs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		09E233E926D3890800C45BF9 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		09E233EC26D389DF00C45BF9 /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		09E233EF26D38A5800C45BF9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		09E6C67A26D38FD1002E5B15 /* CreatingTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingTabs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				09E233E926D3890800C45BF9 /* EditView.swift */,
 				09E233EC26D389DF00C45BF9 /* DisplayView.swift */,
 				09E233EF26D38A5800C45BF9 /* MainView.swift */,
+				09E6C67A26D38FD1002E5B15 /* CreatingTabs.swift */,
 			);
 			path = "Day 79";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E6C67B26D38FD1002E5B15 /* CreatingTabs.swift in Sources */,
 				09E233D726D3846100C45BF9 /* ContentView.swift in Sources */,
 				09E233F026D38A5800C45BF9 /* MainView.swift in Sources */,
 				09E233D526D3846100C45BF9 /* HotProspectsApp.swift in Sources */,
