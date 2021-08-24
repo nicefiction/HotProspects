@@ -1,18 +1,22 @@
-//
-//  HotProspectsApp.swift
-//  HotProspects
-//
-//  Created by Olivier Van hamme on 23/08/2021.
-//
+// HotProspectsApp.swift
+
+// MARK: - LIBRARIES =
 
 import SwiftUI
 
+
+
 @main
 struct HotProspectsApp: App {
-    var body: some Scene {
-        WindowGroup {
-            // ContentView()
-         ResultType()
-        }
-    }
+   
+   // MARK: - COMPUTED PROPERTIES
+   
+   var body: some Scene {
+      
+      WindowGroup {
+         // ContentView()
+         // ResultType()
+         DelayedView()
+      }
+   }
 }
