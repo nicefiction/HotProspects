@@ -73,6 +73,7 @@ struct ResultType: View {
 //                  print(_error.localizedDescription)
 //               }
 //            }.resume()
+            // ⭐️ :
             self.fetchData(from: "https://www.apple.com") { (result: Result) in
                switch result {
                case Result.success(let string): print(string)
@@ -153,7 +154,7 @@ struct ResultType: View {
    func fetchData(from urlString: String,
                   completion: @escaping (Result<String, NetworkError>) -> Void) {
       
-      /// Check the URL is OK , otherwise return with a failure :
+      /// Check if the URL is OK , otherwise return with a failure :
       guard let _url = URL(string: urlString)
       else {
          completion(Result.failure(NetworkError.badURL))
@@ -186,16 +187,16 @@ struct ResultType: View {
       /// if we do get an error
       /// then it must be one of the cases specified in `NetworkError`,
       /// which makes error handling much easier .
-      /// `NOTE` All we’ve done so far is
+      /// `NOTE` All we have done so far is
       /// to write functions that use `Result`;
-      /// we haven’t written anything that handles the Result that got sent back .
+      /// we haven’t written anything that handles the `Result` that got sent back .
       /// Behind the scenes , `Result` is actually an `enum` with an _associated value_,
       /// and Swift has very particular syntax for dealing with these :
       /// we can switch on the `Result`,
       /// and write cases such as case `.success(let str)` to mean
       /// _if this was successful, pull out the string inside into a new constant called str._
       /// It is easier to see this all in action ,
-      /// so let’s attach our new method to our `onAppear` closure , and handle all possible cases :⭐️
+      /// so let’s attach our new method to our `onAppear` closure , and handle all possible cases : ⭐️
       
    }
 }
