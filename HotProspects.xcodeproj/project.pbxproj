@@ -10,6 +10,7 @@
 		0908E54426D4FC0C00BB0576 /* ControllingImageInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E54326D4FC0C00BB0576 /* ControllingImageInterpolation.swift */; };
 		0908E54726D4FE3400BB0576 /* DelayedUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E54626D4FE3400BB0576 /* DelayedUpdater.swift */; };
 		0908E55526D6216000BB0576 /* ContextMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55426D6216000BB0576 /* ContextMenus.swift */; };
+		0908E55926D625C900BB0576 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55826D625C900BB0576 /* LocalNotifications.swift */; };
 		09E233D526D3846100C45BF9 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233D426D3846100C45BF9 /* HotProspectsApp.swift */; };
 		09E233D726D3846100C45BF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233D626D3846100C45BF9 /* ContentView.swift */; };
 		09E233D926D3846400C45BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E233D826D3846400C45BF9 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		0908E54326D4FC0C00BB0576 /* ControllingImageInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllingImageInterpolation.swift; sourceTree = "<group>"; };
 		0908E54626D4FE3400BB0576 /* DelayedUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedUpdater.swift; sourceTree = "<group>"; };
 		0908E55426D6216000BB0576 /* ContextMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenus.swift; sourceTree = "<group>"; };
+		0908E55826D625C900BB0576 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		09E233D126D3846100C45BF9 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E233D426D3846100C45BF9 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		09E233D626D3846100C45BF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				0908E55426D6216000BB0576 /* ContextMenus.swift */,
+				0908E55826D625C900BB0576 /* LocalNotifications.swift */,
 			);
 			path = "Day 81";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0908E55926D625C900BB0576 /* LocalNotifications.swift in Sources */,
 				09E6C67B26D38FD1002E5B15 /* CreatingTabs.swift in Sources */,
 				09E233D726D3846100C45BF9 /* ContentView.swift in Sources */,
 				09E233F026D38A5800C45BF9 /* MainView.swift in Sources */,

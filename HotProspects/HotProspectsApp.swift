@@ -16,7 +16,8 @@ struct HotProspectsApp: App {
       WindowGroup {
          // ContentView()
          // ResultType()
-         DelayedView()
+         // DelayedView()
+         LocalNotifications()
       }
    }
 }
