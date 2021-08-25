@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		0908E54726D4FE3400BB0576 /* DelayedUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E54626D4FE3400BB0576 /* DelayedUpdater.swift */; };
 		0908E55526D6216000BB0576 /* ContextMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55426D6216000BB0576 /* ContextMenus.swift */; };
 		0908E55926D625C900BB0576 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55826D625C900BB0576 /* LocalNotifications.swift */; };
+		0908E55C26D6320B00BB0576 /* PackageDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55B26D6320B00BB0576 /* PackageDependencies.swift */; };
+		0908E56026D6347200BB0576 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 0908E55F26D6347200BB0576 /* SamplePackage */; };
 		09E233D526D3846100C45BF9 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233D426D3846100C45BF9 /* HotProspectsApp.swift */; };
 		09E233D726D3846100C45BF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233D626D3846100C45BF9 /* ContentView.swift */; };
 		09E233D926D3846400C45BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09E233D826D3846400C45BF9 /* Assets.xcassets */; };
@@ -28,6 +30,7 @@
 		0908E54626D4FE3400BB0576 /* DelayedUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedUpdater.swift; sourceTree = "<group>"; };
 		0908E55426D6216000BB0576 /* ContextMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenus.swift; sourceTree = "<group>"; };
 		0908E55826D625C900BB0576 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		0908E55B26D6320B00BB0576 /* PackageDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDependencies.swift; sourceTree = "<group>"; };
 		09E233D126D3846100C45BF9 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E233D426D3846100C45BF9 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		09E233D626D3846100C45BF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0908E56026D6347200BB0576 /* SamplePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +62,7 @@
 			children = (
 				0908E55426D6216000BB0576 /* ContextMenus.swift */,
 				0908E55826D625C900BB0576 /* LocalNotifications.swift */,
+				0908E55B26D6320B00BB0576 /* PackageDependencies.swift */,
 			);
 			path = "Day 81";
 			sourceTree = "<group>";
@@ -139,6 +144,9 @@
 			dependencies = (
 			);
 			name = HotProspects;
+			packageProductDependencies = (
+				0908E55F26D6347200BB0576 /* SamplePackage */,
+			);
 			productName = HotProspects;
 			productReference = 09E233D126D3846100C45BF9 /* HotProspects.app */;
 			productType = "com.apple.product-type.application";
@@ -166,6 +174,9 @@
 				Base,
 			);
 			mainGroup = 09E233C826D3846100C45BF9;
+			packageReferences = (
+				0908E55E26D6347200BB0576 /* XCRemoteSwiftPackageReference "SamplePackage" */,
+			);
 			productRefGroup = 09E233D226D3846100C45BF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -204,6 +215,7 @@
 				0908E55526D6216000BB0576 /* ContextMenus.swift in Sources */,
 				09E233ED26D389DF00C45BF9 /* DisplayView.swift in Sources */,
 				09E233E626D3889600C45BF9 /* User.swift in Sources */,
+				0908E55C26D6320B00BB0576 /* PackageDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0908E55E26D6347200BB0576 /* XCRemoteSwiftPackageReference "SamplePackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/SamplePackage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0908E55F26D6347200BB0576 /* SamplePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0908E55E26D6347200BB0576 /* XCRemoteSwiftPackageReference "SamplePackage" */;
+			productName = SamplePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09E233C926D3846100C45BF9 /* Project object */;
 }
