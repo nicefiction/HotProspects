@@ -9,22 +9,22 @@ import SwiftUI
 
 
 class DelayedUpdater: ObservableObject {
-   
+
    // MARK: - PROPERTY WRAPPERS
-   
+
    // @Published var value: Int = 0
    var value: Int = 0 {
       willSet {
          objectWillChange.send()
       }
    }
-   
-   
-   
+
+
+
    // MARK: - INITIALIZER METHODS
-   
+
    init() {
-      for i in 0...10 {
+      for i in 0..<10 {
          DispatchQueue.main.asyncAfter(deadline: .now() + Double(i)) {
             /// `asyncAfter()` lets us specify when the attached closure should be run ,
             /// which means we can say _do this work after 1 second_ rather than _do this work now_.
@@ -33,6 +33,7 @@ class DelayedUpdater: ObservableObject {
       }
    }
 }
+
 
 
 
@@ -65,5 +66,6 @@ struct DelayedView_Previews: PreviewProvider {
     static var previews: some View {
       
       DelayedView()
+         .preferredColorScheme(.dark)
     }
 }

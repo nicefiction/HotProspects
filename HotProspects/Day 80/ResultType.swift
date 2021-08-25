@@ -154,7 +154,8 @@ struct ResultType: View {
    func fetchData(from urlString: String,
                   completion: @escaping (Result<String, NetworkError>) -> Void) {
       
-      /// Check if the URL is OK , otherwise return with a failure :
+      /// Check if the URL is OK ,
+      /// otherwise return with a failure :
       guard let _url = URL(string: urlString)
       else {
          completion(Result.failure(NetworkError.badURL))
