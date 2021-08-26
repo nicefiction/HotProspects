@@ -1,4 +1,7 @@
 // ContentView.swift
+// SOURCE:
+// https://www.hackingwithswift.com/books/ios-swiftui/building-our-tab-bar
+// https://www.hackingwithswift.com/books/ios-swiftui/sharing-data-across-tabs-using-environmentobject
 
 // MARK: - LIBRARIES -
 
@@ -7,6 +10,12 @@ import SwiftUI
 
 
 struct ContentView: View {
+   
+   // MARK: - PROPERTIES
+   
+   var prospects: Prospects = Prospects()
+   
+   
    
    // MARK: - COMPUTED PROPERTIES
    
@@ -34,6 +43,10 @@ struct ContentView: View {
                Text("Me")
             }
       }
+      /// Because tabs are considered children of the `TabView` they are inside ,
+      /// if we add it to the environment for the `TabView`
+      /// then all our `ProspectsView` instances will get that object .
+      .environmentObject(prospects)
    }
 }
 
