@@ -1,4 +1,7 @@
 // ProspectsView.swift
+// SOURCE:
+// https://www.hackingwithswift.com/books/ios-swiftui/sharing-data-across-tabs-using-environmentobject
+// https://www.hackingwithswift.com/books/ios-swiftui/dynamically-filtering-a-swiftui-list
 
 // MARK: - LIBRARIES -
 
@@ -38,6 +41,7 @@ struct ProspectsView: View {
    
    // MARK: - COMPUTED PROPERTIES
    
+   
    var title: String {
       
       switch selected {
@@ -47,41 +51,54 @@ struct ProspectsView: View {
       }
    }
    
+   
+   var filteredProspects: Array<Prospect> {
+      
+      switch selected {
+      case ProspectsView.FilterType.none:
+         return prospects.humans
+      case ProspectsView.FilterType.contacted:
+         return prospects.humans.filter { (prospect: Prospect) in
+            prospect.hasBeenContacted
+         }
+      case ProspectsView.FilterType.uncontacted:
+         return prospects.humans.filter { (prospect: Prospect) in
+            !prospect.hasBeenContacted
+         }
+      }
+   }
+   
+   
    var body: some View {
       
       NavigationView {
-         Text("\(prospects.humans.count) \(prospects.humans.count == 1 ? "human" : "humans")")
-            .navigationBarTitle(title)
-            .navigationBarItems(
-               trailing:
-                  Button(action: {
-                     let dorothy = Prospect()
-                     dorothy.emailAddress = "dorothy@oz.com"
-                     dorothy.name = "Dorothy Gale"
-                     self.prospects.humans.append(dorothy)
-                  },
-                  label: {
-                     Image(systemName: "qrcode.viewfinder")
-                     Text("Scan")
-                  }))
+         List {
+            ForEach(filteredProspects) { (prospect: Prospect) in
+               VStack(alignment: .leading) {
+                  Text(prospect.name)
+                     .font(.headline)
+                  Text(prospect.emailAddress)
+                     .foregroundColor(.secondary)
+               }
+            }
+         }
+         .navigationBarTitle(title)
+         .navigationBarItems(
+            trailing:
+               Button(action: {
+                  let dorothy = Prospect()
+                  dorothy.emailAddress = "dorothy@oz.com"
+                  dorothy.name = "Dorothy Gale"
+                  self.prospects.humans.append(dorothy)
+               },
+               label: {
+                  Image(systemName: "qrcode.viewfinder")
+                  Text("Scan")
+               }))
       }
    }
 }
-/*
- NavigationView {
-     Text("People: \(prospects.people.count)")
-         .navigationBarTitle(title)
-         .navigationBarItems(trailing: Button(action: {
-             let prospect = Prospect()
-             prospect.name = "Paul Hudson"
-             prospect.emailAddress = "paul@hackingwithswift.com"
-             self.prospects.people.append(prospect)
-         }) {
-             Image(systemName: "qrcode.viewfinder")
-             Text("Scan")
-         })
- }
- */
+
 
 
 
@@ -89,9 +106,9 @@ struct ProspectsView: View {
 // MARK: - PREVIEWS -
 
 struct ProspectsView_Previews: PreviewProvider {
-   
+
    static var previews: some View {
-      
+
       ProspectsView(selected: ProspectsView.FilterType.none)
    }
 }
