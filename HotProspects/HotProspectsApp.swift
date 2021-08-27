@@ -14,10 +14,10 @@ struct HotProspectsApp: App {
    var body: some Scene {
       
       WindowGroup {
-         // ContentView()
+         ContentView()
          // ResultType()
          // DelayedView()
-         LocalNotifications()
+         // LocalNotifications()
       }
    }
 }

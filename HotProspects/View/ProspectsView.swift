@@ -2,10 +2,12 @@
 // SOURCE:
 // https://www.hackingwithswift.com/books/ios-swiftui/sharing-data-across-tabs-using-environmentobject
 // https://www.hackingwithswift.com/books/ios-swiftui/dynamically-filtering-a-swiftui-list
+// https://www.hackingwithswift.com/books/ios-swiftui/scanning-qr-codes-with-swiftui
 
 // MARK: - LIBRARIES -
 
 import SwiftUI
+import CodeScanner
 
 
 
@@ -30,6 +32,7 @@ struct ProspectsView: View {
    /// by the time the view is created .
    /// If it isn’t present , your app will crash immediately
    /// – be careful , and treat it like an _implicitly unwrapped optional_ .
+   @State private var isShowingScanner: Bool = false
    
    
    
@@ -69,6 +72,8 @@ struct ProspectsView: View {
    }
    
    
+   // MARK: - BODY -
+   
    var body: some View {
       
       NavigationView {
@@ -86,15 +91,44 @@ struct ProspectsView: View {
          .navigationBarItems(
             trailing:
                Button(action: {
-                  let dorothy = Prospect()
-                  dorothy.emailAddress = "dorothy@oz.com"
-                  dorothy.name = "Dorothy Gale"
-                  self.prospects.humans.append(dorothy)
+//                  let dorothy = Prospect()
+//                  dorothy.emailAddress = "dorothy@oz.com"
+//                  dorothy.name = "Dorothy Gale"
+//                  self.prospects.humans.append(dorothy)
+                  isShowingScanner.toggle()
                },
                label: {
                   Image(systemName: "qrcode.viewfinder")
                   Text("Scan")
                }))
+         .sheet(isPresented: $isShowingScanner) {
+             CodeScannerView(codeTypes: [.qr],
+                             simulatedData: "Dorothy Gale\ndorothy@oz.com",
+                             completion: self.handleScan)
+         }
+      }
+   }
+   
+   
+   
+   // MARK: - METHODS
+   
+   func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+      
+      self.isShowingScanner = false
+      
+      switch result {
+      case .success(let code):
+          let details = code.components(separatedBy: "\n")
+          guard details.count == 2 else { return }
+
+          let person = Prospect()
+          person.name = details[0]
+          person.emailAddress = details[1]
+
+          self.prospects.humans.append(person)
+      case .failure:
+          print("Scanning failed")
       }
    }
 }
