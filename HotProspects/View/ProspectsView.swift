@@ -21,7 +21,7 @@ struct ProspectsView: View {
    
    // MARK: - PROPERTY OBSERVERS
    
-   /// We want all instances of `ProspectsView` to read that object back out of the environment
+   /// `3/3`We want all instances of `ProspectsView` to read that object back out of the environment
    /// when they are created :
    @EnvironmentObject var prospects: Prospects
    /// `NOTE`: When you use `@EnvironmentObject`

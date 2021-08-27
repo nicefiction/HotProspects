@@ -13,6 +13,9 @@ struct ContentView: View {
    
    // MARK: - PROPERTIES
    
+   /// `1/3`First ,
+   /// we need to add a property to ContentView
+   /// that creates and stores a single instance of the Prospects class :
    var prospects: Prospects = Prospects()
    
    
@@ -43,6 +46,9 @@ struct ContentView: View {
                Text("Me")
             }
       }
+      /// `2/3`Second ,
+      /// we need to post that property into the SwiftUI environment ,
+      /// so that all child views can access it . 
       /// Because tabs are considered children of the `TabView` they are inside ,
       /// if we add it to the environment for the `TabView`
       /// then all our `ProspectsView` instances will get that object .
