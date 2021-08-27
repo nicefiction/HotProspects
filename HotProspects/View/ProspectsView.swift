@@ -3,6 +3,7 @@
 // https://www.hackingwithswift.com/books/ios-swiftui/sharing-data-across-tabs-using-environmentobject
 // https://www.hackingwithswift.com/books/ios-swiftui/dynamically-filtering-a-swiftui-list
 // https://www.hackingwithswift.com/books/ios-swiftui/scanning-qr-codes-with-swiftui
+// https://www.hackingwithswift.com/books/ios-swiftui/adding-options-with-a-context-menu
 
 // MARK: - LIBRARIES -
 
@@ -85,6 +86,15 @@ struct ProspectsView: View {
                   Text(prospect.emailAddress)
                      .foregroundColor(.secondary)
                }
+               .contextMenu(
+                  ContextMenu(
+                     menuItems: {
+                        Button(prospect.hasBeenContacted ? "Mark Uncontacted" : "Mark Contacted",
+                               action: {
+                                 // prospect.hasBeenContacted.toggle()
+                                 prospects.toggle(prospect)
+                               })
+                     }))
             }
          }
          .navigationBarTitle(title)

@@ -16,7 +16,6 @@
 		0908E56026D6347200BB0576 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 0908E55F26D6347200BB0576 /* SamplePackage */; };
 		09E05E6526D7771200A8BE33 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E6426D7771200A8BE33 /* ProspectsView.swift */; };
 		09E05E6B26D7785100A8BE33 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E6A26D7785100A8BE33 /* MeView.swift */; };
-		09E05E7026D7854D00A8BE33 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E6F26D7854D00A8BE33 /* Prospect.swift */; };
 		09E05E7426D7884600A8BE33 /* Prospects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E7326D7884600A8BE33 /* Prospects.swift */; };
 		09E233D526D3846100C45BF9 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233D426D3846100C45BF9 /* HotProspectsApp.swift */; };
 		09E233D726D3846100C45BF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E233D626D3846100C45BF9 /* ContentView.swift */; };
@@ -38,7 +37,6 @@
 		0908E55B26D6320B00BB0576 /* PackageDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDependencies.swift; sourceTree = "<group>"; };
 		09E05E6426D7771200A8BE33 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		09E05E6A26D7785100A8BE33 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
-		09E05E6F26D7854D00A8BE33 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		09E05E7326D7884600A8BE33 /* Prospects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospects.swift; sourceTree = "<group>"; };
 		09E233D126D3846100C45BF9 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E233D426D3846100C45BF9 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 		09E05E6D26D7852300A8BE33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				09E05E6F26D7854D00A8BE33 /* Prospect.swift */,
 				09E05E7326D7884600A8BE33 /* Prospects.swift */,
 			);
 			path = Model;
@@ -253,7 +250,6 @@
 				09E6C6AD26D4E331002E5B15 /* ResultType.swift in Sources */,
 				09E233EA26D3890800C45BF9 /* EditView.swift in Sources */,
 				0908E54426D4FC0C00BB0576 /* ControllingImageInterpolation.swift in Sources */,
-				09E05E7026D7854D00A8BE33 /* Prospect.swift in Sources */,
 				09E05E6B26D7785100A8BE33 /* MeView.swift in Sources */,
 				0908E55526D6216000BB0576 /* ContextMenus.swift in Sources */,
 				09E05E6526D7771200A8BE33 /* ProspectsView.swift in Sources */,
