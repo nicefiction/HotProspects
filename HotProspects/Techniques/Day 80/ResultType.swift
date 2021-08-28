@@ -16,7 +16,7 @@
  _But what if the function call doesn’t return immediately ?_
  */
 /**
- Swift’s Result type is designed to solve the problem
+ Swift’s `Result` type is designed to solve the problem
  when you know thing A might be true or thing B might be true ,
  but exactly one can be true at any given time .
  If you imagine those as Boolean properties ,
@@ -39,7 +39,7 @@
  However , because `URLSession` doesn’t enforce this constraint for us
  we need to write code to handle the impossible cases , just to make sure all bases are covered .
  Swift has a solution for this confusion , and it is a special data type called `Result`.
- This gives us the either/or behavior we want .
+ This gives us the _either/or_ behavior we want .
  */
 
 // MARK: - LIBRARIES -

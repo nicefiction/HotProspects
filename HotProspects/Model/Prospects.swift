@@ -1,6 +1,7 @@
 // Prospects.swift
 // MARK: SOURCE
 // https://www.hackingwithswift.com/books/ios-swiftui/adding-options-with-a-context-menu
+// https://www.hackingwithswift.com/books/ios-swiftui/saving-and-loading-data-with-userdefaults
 
 // MARK: - LIBRARIES -
 
@@ -31,15 +32,34 @@ class Prospect: Identifiable,
 
 class Prospects: ObservableObject {
    
+   // MARK: - STATIC PROPERTIES
+   
+   static let saveKey: String = "SavedData"
+   
+   
+   
    // MARK: - PROPERTIES
    
-   @Published var humans: Array<Prospect>
+   /// We can use access control
+   /// to stop external writes to the `humans` Array ,
+   /// meaning that our views must use the `add()` method to add prospects :
+   @Published private(set) var humans: Array<Prospect>
    
    
    
    // MARK: - INITIALIZERS
    
-   init() { self.humans = Array<Prospect>() }
+   init() {
+      if let _data = UserDefaults.standard.data(forKey: Prospects.saveKey) {
+         if let _decodedData = try? JSONDecoder().decode(Array<Prospect>.self,
+                                                         from: _data) {
+            self.humans = _decodedData
+            return
+         }
+      }
+      
+      self.humans = Array<Prospect>()
+   }
    
    
    
@@ -52,5 +72,23 @@ class Prospects: ObservableObject {
       /// to ensure SwiftUI gets its animations correct .
       objectWillChange.send()
       prospect.hasBeenContacted.toggle()
+      
+      save()
+   }
+   
+   
+   private func save() {
+      
+      if let _encodedData = try? JSONEncoder().encode(humans) {
+         UserDefaults.standard.set(_encodedData,
+                                   forKey: Prospects.saveKey)
+      }
+   }
+   
+   
+   func add(_ prospect: Prospect) {
+      
+      humans.append(prospect)
+      save()
    }
 }

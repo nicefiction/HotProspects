@@ -129,16 +129,27 @@ struct ProspectsView: View {
       
       switch result {
       case .success(let code):
-          let details = code.components(separatedBy: "\n")
-          guard details.count == 2 else { return }
-
-          let person = Prospect()
-          person.name = details[0]
-          person.emailAddress = details[1]
-
-          self.prospects.humans.append(person)
+         let details = code.components(separatedBy: "\n")
+         guard details.count == 2 else { return }
+         
+         let person = Prospect()
+         person.name = details[0]
+         person.emailAddress = details[1]
+         
+         /// When we write code like ...
+         // self.prospects.humans.append(person)
+         // self.prospects.save()
+         /// we are breaking a software engineering principle known as _encapsulation_.
+         /// This is the idea that we should limit
+         /// how much external objects can read and write values inside a class or a struct ,
+         /// and instead provide methods for reading (getters) and writing (setters) that data .
+         /// In practical terms , this means
+         /// rather than writing `self.prospects.humans.append(person)`
+         /// we would instead create an `add()` method on the `Prospects` class ,
+         /// so we could write code like this :
+         self.prospects.add(person)
       case .failure:
-          print("Scanning failed")
+         print("Scanning failed")
       }
    }
 }
