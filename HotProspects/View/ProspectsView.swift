@@ -4,11 +4,13 @@
 // https://www.hackingwithswift.com/books/ios-swiftui/dynamically-filtering-a-swiftui-list
 // https://www.hackingwithswift.com/books/ios-swiftui/scanning-qr-codes-with-swiftui
 // https://www.hackingwithswift.com/books/ios-swiftui/adding-options-with-a-context-menu
+// https://www.hackingwithswift.com/books/ios-swiftui/posting-notifications-to-the-lock-screen
 
 // MARK: - LIBRARIES -
 
 import SwiftUI
 import CodeScanner
+import UserNotifications
 
 
 
@@ -94,7 +96,13 @@ struct ProspectsView: View {
                                  // prospect.hasBeenContacted.toggle()
                                  prospects.toggle(prospect)
                                })
+                        if !prospect.hasBeenContacted {
+                           Button("Remind Me") {
+                              self.addNotification(for: prospect)
+                           }
+                        }
                      }))
+               
             }
          }
          .navigationBarTitle(title)
@@ -150,6 +158,52 @@ struct ProspectsView: View {
          self.prospects.add(person)
       case .failure:
          print("Scanning failed")
+      }
+   }
+   
+   
+   func addNotification(for prospect: Prospect) {
+      
+      let center = UNUserNotificationCenter.current()
+      
+      let addRequest = {
+         
+         let content = UNMutableNotificationContent()
+         content.title = "Contact \(prospect.name)"
+         content.subtitle = prospect.emailAddress
+         content.sound = UNNotificationSound.default
+
+//           var dateComponents = DateComponents()
+//           dateComponents.hour = 9 // which means it will trigger the next time 9am comes about.
+//           let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents,
+//                                                       repeats: false)
+         /// `TIP`: For testing purposes ,
+         /// I recommend you comment out that trigger code
+         /// and replace it with the following , which shows the alert five seconds from now :
+         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                                                         repeats: false)
+         
+         let request = UNNotificationRequest(identifier: UUID().uuidString,
+                                             content: content,
+                                             trigger: trigger)
+         center.add(request)
+       }
+
+      /// For the second part of that method
+      /// we are going to use both `getNotificationSettings()` and `requestAuthorization()` together,
+      /// to make sure we only schedule notifications when allowed .
+      center.getNotificationSettings { settings in
+         if settings.authorizationStatus == .authorized {
+            addRequest()
+         } else {
+            center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+               if success {
+                  addRequest()
+               } else {
+                  print("D'oh")
+               }
+            }
+         }
       }
    }
 }
