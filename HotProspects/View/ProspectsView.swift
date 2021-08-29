@@ -83,8 +83,11 @@ struct ProspectsView: View {
          List {
             ForEach(filteredProspects) { (prospect: Prospect) in
                VStack(alignment: .leading) {
-                  Text(prospect.name)
-                     .font(.headline)
+                  HStack {
+                     Image(systemName: "\(prospect.hasBeenContacted ? "circle" : "square")")
+                     Text(prospect.name)
+                        .font(.headline)
+                  }
                   Text(prospect.emailAddress)
                      .foregroundColor(.secondary)
                }
@@ -214,10 +217,10 @@ struct ProspectsView: View {
 
 // MARK: - PREVIEWS -
 
-struct ProspectsView_Previews: PreviewProvider {
-
-   static var previews: some View {
-
-      ProspectsView(selected: ProspectsView.FilterType.none)
-   }
-}
+//struct ProspectsView_Previews: PreviewProvider {
+//
+//   static var previews: some View {
+//
+//      ProspectsView(selected: ProspectsView.FilterType.none)
+//   }
+//}
