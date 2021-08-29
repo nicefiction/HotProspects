@@ -36,6 +36,8 @@ struct ProspectsView: View {
    /// If it isn’t present , your app will crash immediately
    /// – be careful , and treat it like an _implicitly unwrapped optional_ .
    @State private var isShowingScanner: Bool = false
+   @State private var isShowingActionSheet: Bool = false
+   @State private var sortedProspects = Prospects().humans
    
    
    
@@ -61,6 +63,7 @@ struct ProspectsView: View {
    var filteredProspects: Array<Prospect> {
       
       switch selected {
+      
       case ProspectsView.FilterType.none:
          return prospects.humans
       case ProspectsView.FilterType.contacted:
@@ -75,20 +78,22 @@ struct ProspectsView: View {
    }
    
    
+   
    // MARK: - BODY -
    
    var body: some View {
       
       NavigationView {
          List {
-            ForEach(filteredProspects) { (prospect: Prospect) in
+            // ForEach(filteredProspects) { (prospect: Prospect) in
+            ForEach(sortedProspects) { (prospect: Prospect) in
                VStack(alignment: .leading) {
                   HStack {
                      Image(systemName: "\(prospect.hasBeenContacted ? "circle" : "square")")
                      Text(prospect.name)
                         .font(.headline)
                   }
-                  Text(prospect.emailAddress)
+                  Text("\(prospect.id)")
                      .foregroundColor(.secondary)
                }
                .contextMenu(
@@ -110,6 +115,10 @@ struct ProspectsView: View {
          }
          .navigationBarTitle(title)
          .navigationBarItems(
+            leading:
+               Button("Sort", action: {
+                  isShowingActionSheet.toggle()
+               }),
             trailing:
                Button(action: {
 //                  let dorothy = Prospect()
@@ -127,12 +136,38 @@ struct ProspectsView: View {
                              simulatedData: "Dorothy Gale\ndorothy@oz.com",
                              completion: self.handleScan)
          }
+         .actionSheet(isPresented: $isShowingActionSheet) {
+            ActionSheet(title: Text("Title"),
+                        message: Text("Message"),
+                        buttons: [
+                           ActionSheet.Button.default(
+                              Text("Sort by ID"),
+                              action: {
+                                 let sortedProspectsByID = sortByID(with: filteredProspects)
+                                 sortedProspects = sortedProspectsByID
+                                 // DEBUG: 
+                                 for sortedProspect in sortedProspectsByID {
+                                    print(sortedProspect.id)
+                                 }
+                              }),
+                           ActionSheet.Button.cancel()
+                        ])
+         }
       }
    }
    
    
    
    // MARK: - METHODS
+   
+   func sortByID(with prospects: Array<Prospect>)
+   -> Array<Prospect> {
+      
+      return filteredProspects.sorted {
+         $0.id < $1.id
+      }
+   }
+   
    
    func handleScan(result: Result<String, CodeScannerView.ScanError>) {
       
