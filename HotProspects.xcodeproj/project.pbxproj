@@ -14,6 +14,7 @@
 		0908E55926D625C900BB0576 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55826D625C900BB0576 /* LocalNotifications.swift */; };
 		0908E55C26D6320B00BB0576 /* PackageDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55B26D6320B00BB0576 /* PackageDependencies.swift */; };
 		0908E56026D6347200BB0576 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 0908E55F26D6347200BB0576 /* SamplePackage */; };
+		09346E3726E1181300FD0BA7 /* StoringUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09346E3626E1181300FD0BA7 /* StoringUserSettings.swift */; };
 		09E05E6526D7771200A8BE33 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E6426D7771200A8BE33 /* ProspectsView.swift */; };
 		09E05E6B26D7785100A8BE33 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E6A26D7785100A8BE33 /* MeView.swift */; };
 		09E05E7426D7884600A8BE33 /* Prospects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E7326D7884600A8BE33 /* Prospects.swift */; };
@@ -35,6 +36,7 @@
 		0908E55426D6216000BB0576 /* ContextMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenus.swift; sourceTree = "<group>"; };
 		0908E55826D625C900BB0576 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		0908E55B26D6320B00BB0576 /* PackageDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDependencies.swift; sourceTree = "<group>"; };
+		09346E3626E1181300FD0BA7 /* StoringUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringUserSettings.swift; sourceTree = "<group>"; };
 		09E05E6426D7771200A8BE33 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		09E05E6A26D7785100A8BE33 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		09E05E7326D7884600A8BE33 /* Prospects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospects.swift; sourceTree = "<group>"; };
@@ -75,9 +77,18 @@
 			path = "Day 81";
 			sourceTree = "<group>";
 		};
+		09346E3526E117DE00FD0BA7 /* Day 36 */ = {
+			isa = PBXGroup;
+			children = (
+				09346E3626E1181300FD0BA7 /* StoringUserSettings.swift */,
+			);
+			path = "Day 36";
+			sourceTree = "<group>";
+		};
 		09E05E6326D776EC00A8BE33 /* Techniques */ = {
 			isa = PBXGroup;
 			children = (
+				09346E3526E117DE00FD0BA7 /* Day 36 */,
 				09E233E426D3864600C45BF9 /* Day 79 */,
 				09E6C6AB26D4E311002E5B15 /* Day 80 */,
 				0908E55326D6214700BB0576 /* Day 81 */,
@@ -252,6 +263,7 @@
 				0908E54426D4FC0C00BB0576 /* ControllingImageInterpolation.swift in Sources */,
 				09E05E6B26D7785100A8BE33 /* MeView.swift in Sources */,
 				0908E55526D6216000BB0576 /* ContextMenus.swift in Sources */,
+				09346E3726E1181300FD0BA7 /* StoringUserSettings.swift in Sources */,
 				09E05E6526D7771200A8BE33 /* ProspectsView.swift in Sources */,
 				09E233ED26D389DF00C45BF9 /* DisplayView.swift in Sources */,
 				09E233E626D3889600C45BF9 /* User.swift in Sources */,

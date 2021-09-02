@@ -18,6 +18,7 @@ struct HotProspectsApp: App {
          // ResultType()
          // DelayedView()
          // LocalNotifications()
+         // StoringUserSettings()
       }
    }
 }
