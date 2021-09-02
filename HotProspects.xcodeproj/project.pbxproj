@@ -15,6 +15,7 @@
 		0908E55C26D6320B00BB0576 /* PackageDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0908E55B26D6320B00BB0576 /* PackageDependencies.swift */; };
 		0908E56026D6347200BB0576 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 0908E55F26D6347200BB0576 /* SamplePackage */; };
 		09346E3726E1181300FD0BA7 /* StoringUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09346E3626E1181300FD0BA7 /* StoringUserSettings.swift */; };
+		09346E3A26E11D9900FD0BA7 /* ArchivingSwiftObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09346E3926E11D9900FD0BA7 /* ArchivingSwiftObjects.swift */; };
 		09E05E6526D7771200A8BE33 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E6426D7771200A8BE33 /* ProspectsView.swift */; };
 		09E05E6B26D7785100A8BE33 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E6A26D7785100A8BE33 /* MeView.swift */; };
 		09E05E7426D7884600A8BE33 /* Prospects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E05E7326D7884600A8BE33 /* Prospects.swift */; };
@@ -37,6 +38,7 @@
 		0908E55826D625C900BB0576 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		0908E55B26D6320B00BB0576 /* PackageDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDependencies.swift; sourceTree = "<group>"; };
 		09346E3626E1181300FD0BA7 /* StoringUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoringUserSettings.swift; sourceTree = "<group>"; };
+		09346E3926E11D9900FD0BA7 /* ArchivingSwiftObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivingSwiftObjects.swift; sourceTree = "<group>"; };
 		09E05E6426D7771200A8BE33 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		09E05E6A26D7785100A8BE33 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		09E05E7326D7884600A8BE33 /* Prospects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospects.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				09346E3626E1181300FD0BA7 /* StoringUserSettings.swift */,
+				09346E3926E11D9900FD0BA7 /* ArchivingSwiftObjects.swift */,
 			);
 			path = "Day 36";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				09E233D726D3846100C45BF9 /* ContentView.swift in Sources */,
 				09E233F026D38A5800C45BF9 /* MainView.swift in Sources */,
 				09E233D526D3846100C45BF9 /* HotProspectsApp.swift in Sources */,
+				09346E3A26E11D9900FD0BA7 /* ArchivingSwiftObjects.swift in Sources */,
 				0908E54726D4FE3400BB0576 /* DelayedUpdater.swift in Sources */,
 				09E6C6AD26D4E331002E5B15 /* ResultType.swift in Sources */,
 				09E233EA26D3890800C45BF9 /* EditView.swift in Sources */,
